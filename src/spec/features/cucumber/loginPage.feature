@@ -7,5 +7,5 @@ Feature: Authentififcation
     When je saisis le username
     And je saisis le mot de passe
     And je clique sur le bouton ligin
-    Then je me rederige vers la page dashboard
+    Then je me rederige vers la page "dashboard"
    

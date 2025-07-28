@@ -1,12 +1,11 @@
 package com.automation.e2etests.pages.objects;
 
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import com.automation.e2etests.utils.BasePage;
+import com.automation.e2etests.utils.Setup;
 
 public class LoginPage extends BasePage {
 
@@ -18,11 +17,14 @@ public class LoginPage extends BasePage {
 
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']")
 	private static WebElement btnLogin;
+	
+	@FindBy(how = How.XPATH, using = "//h6[normalize-space() = 'Dashboard']")
+	private static WebElement textDashboard; 
 
-	public LoginPage(WebDriver driver) {
-		super(driver);
+	public LoginPage() {
+		super(Setup.getDriver());
 
-	}
+	} 
 
 	public static WebElement getUsername() {
 
@@ -41,6 +43,12 @@ public class LoginPage extends BasePage {
 		return btnLogin;
 
 	}
+	
+	public static WebElement getTextDashboard() {
+
+		return textDashboard;
+
+	} 
 
 }
 
